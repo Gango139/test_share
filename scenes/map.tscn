@@ -15,8 +15,6 @@ texture = ExtResource("1_4xfga")
 sources/0 = SubResource("TileSetAtlasSource_4xfga")
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(1245, 702)
-scale = Vector2(2.705, 2.705)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-125.693, -222.551)
