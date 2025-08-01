@@ -1,7 +1,104 @@
-[gd_scene format=3 uid="uid://cgxyyg505jwcw"]
+[gd_scene load_steps=20 format=3 uid="uid://cgxyyg505jwcw"]
+
+[ext_resource type="Script" uid="uid://ce6l7uxo6gjgj" path="res://scripts/player.gd" id="1_fulsm"]
+[ext_resource type="Texture2D" uid="uid://d266d5lmvmqjg" path="res://graphics/player_sprites/Die/DieAnim1.png" id="1_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://d18ng03yytpli" path="res://graphics/player_sprites/Die/DieAnim2.png" id="2_fulsm"]
+[ext_resource type="Texture2D" uid="uid://cns5xsv33m3m3" path="res://graphics/player_sprites/Die/DieAnim3.png" id="3_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://b55g57m3fuo4a" path="res://graphics/player_sprites/Die/DieAnim4.png" id="4_60mlk"]
+[ext_resource type="Texture2D" uid="uid://bjugqopcfxnru" path="res://graphics/player_sprites/Die/DieAnim5.png" id="5_i4ail"]
+[ext_resource type="Texture2D" uid="uid://bpdw3hi1gihbm" path="res://graphics/player_sprites/Die/DieAnim6.png" id="6_a38lo"]
+[ext_resource type="Texture2D" uid="uid://csnesmc2y2u0g" path="res://graphics/player_sprites/Die/DieAnim7.png" id="7_4ni07"]
+[ext_resource type="Texture2D" uid="uid://cnh3j73v6i3uc" path="res://graphics/player_sprites/Die/DieAnim8.png" id="8_l71n6"]
+[ext_resource type="Texture2D" uid="uid://dccvics68xw8t" path="res://graphics/player_sprites/Die/DieAnim9.png" id="9_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://c1063qeck4gvc" path="res://graphics/player_sprites/Die/DieAnim10.png" id="10_ujl30"]
+[ext_resource type="Texture2D" uid="uid://cl0w5ivajt444" path="res://graphics/player_sprites/Die/DieAnim11.png" id="11_31cv2"]
+[ext_resource type="Texture2D" uid="uid://c6ae2aarhl1kh" path="res://graphics/player_sprites/Idle/IdleAnim1.png" id="12_pf23h"]
+[ext_resource type="Texture2D" uid="uid://xe42g0q22826" path="res://graphics/player_sprites/Idle/IdleAnim2.png" id="13_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://bdtc5okyru4d8" path="res://graphics/player_sprites/Walk/WalkAnim1.png" id="14_wqfne"]
+[ext_resource type="Texture2D" uid="uid://bv7vurnctgyd7" path="res://graphics/player_sprites/Walk/WalkAnim2.png" id="15_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://bjtdbw3pdvfmj" path="res://graphics/player_sprites/Walk/WalkAnim3.png" id="16_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://bg5hprsuomks8" path="res://graphics/player_sprites/Walk/WalkAnim4.png" id="17_487ah"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_md1ol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qfm1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fulsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4r5pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_60mlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i4ail")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_31cv2")
+}],
+"loop": true,
+"name": &"Die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dt7fs")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_487ah")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+script = ExtResource("1_fulsm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 1)
+scale = Vector2(0.32, 0.32)
+sprite_frames = SubResource("SpriteFrames_md1ol")
+animation = &"Walk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(4, 1)
+scale = Vector2(0.328, 0.334)
+build_mode = 1
+polygon = PackedVector2Array(-3, 24.9754, 1, 24.9754, 1, 16.1345, 10, 16.1345, 10, 24.9754, 14, 24.9754, 15, 16.1345, 22, 16.1345, 22, -14.3173, 6.09756, -14.9701, -10, -14.3173, -10, 15.1522, -3, 15.1522)

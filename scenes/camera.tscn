@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgm2dhj6lbc6f"]
+
+[ext_resource type="PackedScene" uid="uid://cgxyyg505jwcw" path="res://scenes/player.tscn" id="1_cvpoc"]
+
+[node name="Camera" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-23.6564, -4.12775)
+scale = Vector2(0.495, 0.495)
+zoom = Vector2(18.7, 18.7)
+
+[node name="Player" parent="." instance=ExtResource("1_cvpoc")]
+position = Vector2(-27, -5)
+scale = Vector2(0.495, 0.495)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2(6.75477, 1.76211)
+remote_path = NodePath("../../Camera2D")
